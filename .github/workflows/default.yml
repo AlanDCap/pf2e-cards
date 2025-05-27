@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5
         with:
           name: cards
-          path: result/
+          path: .result/
       - name: Latex check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
