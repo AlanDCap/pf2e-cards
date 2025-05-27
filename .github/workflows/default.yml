@@ -28,7 +28,7 @@ jobs:
     - name: Compile LaTeX document
       run: nix build --no-update-lock-file
     - name: Archive cards.pdf
-      uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
       with:
         name: cards
         path: result/
