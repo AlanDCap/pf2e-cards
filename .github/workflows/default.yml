@@ -6,6 +6,7 @@ on:
       - main
   pull_request:
 permissions:
+  actions: read
   contents: write
   pull-requests: read
   pages: write
@@ -28,10 +29,10 @@ jobs:
       - name: Compile LaTeX document
         run: nix build --no-update-lock-file
       - name: Archive cards.pdf
-        uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5
+        uses: actions/upload-artifact@v4
         with:
           name: cards
-          path: .result/
+          path: result/
       - name: Latex check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
